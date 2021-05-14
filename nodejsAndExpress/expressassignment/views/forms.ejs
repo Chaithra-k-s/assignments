@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assests/public.css">
+</head>
+<body>
+    <div><h1>hello</h1>
+    <p>you are in froms page</p></div>
+    <form method="POST" action="/item">
+        <!-- <input type="text" name="str" id="name" placeholder="enter ur name"> -->
+        <input type="text" name="name" placeholder="enter shoping items">
+        <!-- <input type="text" name="price" placeholder="price"> -->
+        <input type="button" value="submit">
+    </form>
+   
+    <ul>
+        <% for (let i=0;i < todos.length;i++){%>
+            <li><%=todos[i].name %></li>
+            <% } %>
+        </ul>
+</body>
+</html>
+

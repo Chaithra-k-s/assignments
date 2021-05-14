@@ -1,0 +1,21 @@
+table{
+    border-color: green;
+    border-style: solid;
+}
+th{
+    background-color: green;
+    color: white;
+}
+tr{
+    border-style: solid;
+    border-color: green;
+}
+div{
+    border-color: red;
+    border-style: solid;
+    outline-color: lime;
+    outline-style: dotted;
+    margin: 30px;
+    font-size: 20px;
+    margin-right: 750px;
+}

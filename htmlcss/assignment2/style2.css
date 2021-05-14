@@ -1,0 +1,25 @@
+h1
+{
+    font-weight: bold;
+}
+h2
+{
+    text-decoration:line-through;
+}
+h3{
+    text-decoration: underline;
+}
+h4{
+    font-variant-numeric: ordinal;
+    font-style: normal;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(128, 238, 220);
+}
+a{
+    color: red;
+}
+a:visited{
+ color:blue;
+}

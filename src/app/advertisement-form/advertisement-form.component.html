@@ -1,0 +1,52 @@
+<div class="container-fluid mb-5">
+    <h1>ADVERTISEMENT FORMS</h1>
+    <form #userForm="ngForm" *ngIf=!submitted (ngSubmit)="onSubmit()" novalidate>
+        <div class="form group">
+        <label>TITLE</label>
+        <input #title="ngModel" required [(ngModel)]=userModel.title [class.is-invalid]="contact.invalid && contact.touched"
+        type="text" class="form control" name="title" id="">    
+    <small [class.d-none]="title.valid || title.untouched" class="text-danger">
+        title is required</small>
+    </div>
+        <div class="form group">
+        <label for="">NAME</label>
+        <input #name="ngModel" required [(ngModel)]=userModel.name type="text" [class.is-invalid]="contact.invalid && contact.touched"
+        class="from control" name="name" id="">
+        <small [class.d-none]="name.valid || name.untouched" class="text-danger">
+            name is required</small>    
+    </div>
+    <div class="form group">
+        <label for="">CONTACT NUMBER</label>
+        <input #contact="ngModel" required [(ngModel)]=userModel.contact pattern="^\d{10}$" 
+        [class.is-invalid]="contact.invalid && contact.touched" type="tel" class="from control" name="contactinfo" id="">
+        <div *ngIf="contact.errors &&(contact.invalid && contact.touched)">
+        <small *ngIf="contact.errors.required" class="text-danger">contact info is required</small> 
+        <small *ngIf="contact.errors.pattern" class="text-danger">contact number should be 10 digits</small>    
+        </div> 
+    </div>
+        <div class="form group">
+        <label for="" >CATEGORY</label>
+        <select #category1="ngModel" name="category" required [(ngModel)]=userModel.category id="" class="custom-select">
+            <option *ngFor="let topic of category">
+                {{topic}}
+            </option>
+        </select>
+        <small [class.d-none]="category1.invalid || category1.touched ||category1.dirty" class="text-danger">
+            selection is required</small> 
+        </div>
+        <div class="form group">
+            <label for="">DESCRIPTION</label>
+            <input [class.is-invalid]="contact.invalid && contact.touched" #description [(ngModel)]=userModel.description type="text" name="description" id="">
+        </div>
+        <div class="from group">
+            <button [disabled]="userForm.form.invalid" type="submit" class="btn btn-primary">SUBMIT</button>
+        </div>
+    </form>
+    <h2 *ngIf=submitted>form submitted successfully!</h2>
+    <hr>
+    <button *ngIf=submitted (click)="onSubmit2()">submit another form. </button>
+    <div *ngIf=submitted>
+        <app-advertisementtable (childEvent)="value=$event"></app-advertisementtable>
+    </div>
+
+</div>
